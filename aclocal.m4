@@ -29,6 +29,11 @@ AC_DEFUN([DUTI_CHECK_SDK],
 	    sdk="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk"
 	    macosx_arches="-arch i386 -arch x86_64"
 	    ;;
+
+	darwin18*)
+	    sdk="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk"
+	    macosx_arches="-arch x86_64"
+	    ;;
 	*)
 	    AC_MSG_ERROR([${host_os} is not a supported system])
     esac
@@ -69,6 +74,10 @@ AC_DEFUN([DUTI_CHECK_DEPLOYMENT_TARGET],
 
 	darwin12*)
 	    dep_target="10.8"
+	    ;;
+
+	darwin18*)
+	    dep_target="10.14"
 	    ;;
     esac
 
